@@ -1,6 +1,6 @@
-# axe :kissing_closed_eyes:
+# axe 
 
-> Dedicated to making small but beautiful components for Vue.js
+> Dedicated to making small but beautiful components for Vue.js.:kissing_closed_eyes:
 
 ## Installation
 
@@ -31,4 +31,4 @@ npm i @verts/axe
 
 ## Demo
 
-will
+will...
