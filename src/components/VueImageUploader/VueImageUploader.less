@@ -1,0 +1,109 @@
+@import '../../assets/styles/atom.min.css';
+@import '../../assets/styles/material_icons.css';
+
+.files-image {
+      margin-top: 15px;
+      background-color: none;
+      border: 2px dashed #efefef;
+      font-family: "Arial", sans-serif;
+      letter-spacing: 0.2px;
+      color: #777;
+      transition: background-color 0.2s linear;
+      padding: 5px;
+      max-height: inherit;
+      min-height: inherit;
+      width: inherit;
+      text-align: center;
+}
+
+.files-image:hover {
+      border-color: #eb1212;
+}
+
+.files-image .dz-message {
+      height: auto;
+}
+
+.files-image .dz-error-mark,
+.files-image .dz-success-mark {
+      text-align: center;
+      /* width: calc(100% - 30px); */
+      width: auto;
+}
+
+.files-image .dz-remove {
+      width: auto;
+      padding: 0px;
+      margin-left: calc(50% - 20px) !important;
+}
+
+.files-image .dz-success-mark .md-icon,
+.files-image .dz-error-mark .md-icon,
+.files-image .dz-remove .md-icon {
+      display: inline-block;
+}
+
+.files-image .dz-remove {
+      border: none !important;
+      cursor: pointer;
+}
+
+.files-image .dz-remove .md-icon {
+      color: #ffffff !important;
+      cursor: pointer;
+}
+
+.files-image .dz-success-mark .md-icon {
+      color: #4caf50 !important;
+}
+
+.files-image .dropzone-custom-content {
+      width: auto;
+      display: inlin-block;
+}
+
+.files-image .dropzone-custom-content .md-icon {
+      margin-right: 0.2em;
+      color: #aaaaaa;
+}
+
+.files-image .dz-preview {
+      display: inline-block;
+      margin: 0px;
+      min-height: 24px;
+      position: relative;
+}
+
+.files-image .dz-preview .dz-details {
+      background-color: rgba(235, 18, 18, 0.8);
+      cursor: pointer;
+}
+
+.files-image .dz-preview .dz-image {
+      max-height: inherit;
+      min-height: inherit;
+      width: inherit;
+}
+
+.files-image .dz-preview .dz-image>div {
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+      background-size: contain;
+}
+
+.files-image .dz-preview .dz-image>img {
+      object-fit: cover;
+}
+
+.files-image .dz-preview .dz-details {
+      color: white;
+      transition: opacity 0.2s linear;
+      text-align: center;
+}
+
+.files-image .dz-success-mark,
+.dz-error-mark,
+.dz-remove {
+      display: none;
+}
