@@ -5,12 +5,7 @@
 ## Installation
 
 ``` bash
-npm install --save vue-loading-spinner
-```
-or
-
-``` bash
-yarn add vue-loading-spinner
+npm i @verts/axe
 ```
 
 ## Usage
@@ -18,15 +13,17 @@ yarn add vue-loading-spinner
 ``` vue
 <template>
   <div id="app">
-    <rotate-square2></rotate-square2>
+    <VueImageUploader
+      xx=xx
+    ></VueImageUploader>
   </div>
 </template>
 
 <script>
-  import {RotateSquare2} from 'vue-loading-spinner'
+  import {VueImageUploader} from 'axe'
   export default {
     components: {
-      RotateSquare2
+      VueImageUploader
     }
   }
 </script>
@@ -34,8 +31,4 @@ yarn add vue-loading-spinner
 
 ## Demo
 
-List of all spinner: [Demo](https://nguyenvanduocit.github.io/vue-loading-spinner/)
-
-## Development Setup
-
-Checkout branch `develop`
+will

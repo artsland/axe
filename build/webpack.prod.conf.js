@@ -5,11 +5,11 @@ var vueLoaderConfig = require('./vue-loader.conf')
 
 var webpackConfig = {
       entry: {
-            'vue-loading-spinner': './src/index.js'
+            'axe': './src/index.js'
       },
       devtool: '#source-map',
       output: {
-            library: 'VueLoadingSpinner',
+            library: 'axe',
             path: path.resolve(__dirname, '../dist'),
             filename: '[name].js'
       },
@@ -31,18 +31,16 @@ var webpackConfig = {
                         test: /\.js$/,
                         loader: 'babel-loader',
                         include: path.resolve(__dirname, '../src')
+                  },
+                  {
+                        test: /\.css$/,
+                        loader: 'css-loader'
                   }
             ]
       },
       plugins: [
             new webpack.DefinePlugin({
                   'process.env': 'production'
-            }),
-            new webpack.optimize.UglifyJsPlugin({
-                  compress: {
-                        warnings: false
-                  },
-                  sourceMap: true
             }),
             new webpack.optimize.OccurrenceOrderPlugin(),
             // extract css into its own file
