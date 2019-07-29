@@ -2,7 +2,7 @@
 
 # <p align="center"> axe </p>
 
-_<p align="center"Dedicated to making small but beautiful components for Vue.js.</p>_
+_<p align="center">Dedicated to making small but beautiful components for Vue.js.</p>_
 
 <p align="center">
   <a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996icu_img"></a>
