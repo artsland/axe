@@ -95,14 +95,12 @@ export default {
       },
 
       watch: {
-            value: function (newVal, oldVal) {
-                  if (Object.keys(oldVal).length != 0) {
+            value: function () {
+                  let files = this.$refs.filesImage.getAcceptedFiles();
+                  if (files.length != 0) {
                         return;
                   }
-
                   // 如果初次载入，则初始化数据
-                  let files = [];
-
                   // 数据初始化
                   if (Array.isArray(this.value)) {
                         if (this.value.length == 0) {
@@ -115,7 +113,6 @@ export default {
                         }
                         files = [this.value];
                   }
-
                   files.forEach(file => {
                         if (!file.path || !file.url) {
                               return;
@@ -181,29 +178,25 @@ export default {
       methods: {
             template: function () {
                   return `
-        <a  class="dz-preview dz-file-preview" style="width:${
-                        this.width
-                        }px;height:100%;">
-            <img data-dz-thumbnail style="width:${this.width}px;height:${
-                        this.height
-                        }px;object-fit: cover;"/>
-            <div class="dz-details">
-                <div class="dz-size">${this.label}</div>
-            </div>
-            <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
-            <div class="dz-success-mark">
-                <span>
-                    <i class="md-icon md-icon-font md-theme-default">check_circle_outline</i>
-                </span>
-            </div>
-            <div class="dz-error-mark"><span>✘</span></div>
-            <div class="dz-error-message">
-                <span>
-                    <i class="md-icon md-icon-font md-theme-default">error</i>
-                </span>
-            </div>
-        </a>
-        `;
+                  <a  class="dz-preview dz-file-preview" style="width:${this.width}px;height:${this.height}px;">
+                        <img data-dz-thumbnail style="width:${this.width}px;height:${this.height}px;object-fit: cover;"/>
+                        <div class="dz-details">
+                              <div class="dz-size">${this.label}</div>
+                        </div>
+                        <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+                        <div class="dz-success-mark">
+                        <span>
+                              <i class="md-icon md-icon-font md-theme-default">check_circle_outline</i>
+                        </span>
+                        </div>
+                        <div class="dz-error-mark"><span>✘</span></div>
+                        <div class="dz-error-message">
+                        <span>
+                              <i class="md-icon md-icon-font md-theme-default">error</i>
+                        </span>
+                        </div>
+                  </a>
+                  `
             },
             thumbnail: function (file, dataUrl) {
                   // 大图预览
@@ -236,7 +229,7 @@ export default {
                         _message = "上传失败(未知错误)";
                   }
                   this.$refs.filesImage.removeFile(file);
-                  
+
                   message.error(_message);
             },
             onSuccess: function (file) {

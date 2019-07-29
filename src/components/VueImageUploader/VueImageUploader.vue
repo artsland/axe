@@ -2,13 +2,11 @@
       <div>
             <vue-dropzone
                   ref="filesImage"
-                  class="files-image flex justify_center align_center radius_4"
+                  class="files-image flex justify_center align_center"
                   :id="`${this.id}`"
                   :style="{
-                        minWidth: `${this.width}px`,
-                        minHeight: `${this.height}px`,
-                        height: 'auto',
-                        textAlign: 'left',
+                        width: `${this.width}px`,
+                        height: `${this.height}px`,
                         marginTop:0,
                         fontSize:'13px'
                   }"
@@ -26,7 +24,10 @@
                         class="dropzone-custom-content flex flex_column justify_center align_center h_100 w_100"
                         :style="{ width: `${this.width}px` }"
                   >
-                        <i class="md-icon mb_10" style="margin-right:0;">{{icon}}</i>
+                        <i
+                              class="md-icon mb_10"
+                              style="margin-right:0;"
+                        >{{icon}}</i>
                         <span class="color_aaa">{{ label }}</span>
                   </div>
             </vue-dropzone>
@@ -35,7 +36,7 @@
 
 <script src='./VueImageUploader.js'></script>
 
-<style scoped lang="less">
+<style lang="less">
 @import "./VueImageUploader.less";
 </style>
 

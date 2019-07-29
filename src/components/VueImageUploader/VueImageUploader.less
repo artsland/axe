@@ -3,17 +3,19 @@
 
 .files-image {
       margin-top: 15px;
-      background-color: none;
-      border: 2px dashed #efefef;
+      background-color: #fafbfc;
+      border: 1px solid #d1d5da;
       font-family: "Arial", sans-serif;
       letter-spacing: 0.2px;
       color: #777;
       transition: background-color 0.2s linear;
-      padding: 5px;
+      padding: 0;
       max-height: inherit;
       min-height: inherit;
       width: inherit;
       text-align: center;
+      overflow: hidden;
+      border-radius: 4px;
 }
 
 .files-image:hover {
@@ -23,7 +25,6 @@
 .files-image .dz-error-mark,
 .files-image .dz-success-mark {
       text-align: center;
-      /* width: calc(100% - 30px); */
       width: auto;
 }
 
@@ -73,12 +74,16 @@
 .files-image .dz-preview .dz-details {
       background-color: rgba(235, 18, 18, 0.8);
       cursor: pointer;
+      .dz-size{
+            font-size: 13px;
+            font-weight: bold;
+      }
 }
 
 .files-image .dz-preview .dz-image {
       max-height: inherit;
       min-height: inherit;
-      width: inherit;
+      width: inherit;      
 }
 
 .files-image .dz-preview .dz-image>div {
