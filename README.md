@@ -1,6 +1,6 @@
-# vue-loading-spinner
+# axe :kissing_closed_eyes:
 
-> Just another collection of loading spinners with Vue.js
+> Dedicated to making small but beautiful components for Vue.js
 
 ## Installation
 
