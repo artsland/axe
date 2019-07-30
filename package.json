@@ -1,6 +1,6 @@
 {
       "name": "@verts/axe",
-      "version": "0.0.6",
+      "version": "0.0.7",
       "description": "awesome components for Vue.js",
       "author": "artsland",
       "homepage": "https://github.com/artsland/axe",
@@ -15,7 +15,7 @@
       "scripts": {
             "build": "node build/build.js"
       },
-      "main": "./dist/axe.js",
+      "main": "./src/index.js",
       "dependencies": {
             "node-sass": "^4.12.0",
             "sass-loader": "^6.0.6",
