@@ -5,8 +5,8 @@
                   class="files-image flex justify_center align_center"
                   :id="`${this.id}`"
                   :style="{
-                        width: `${this.width}px`,
-                        height: `${this.height}px`,
+                        minWidth: `${this.width}px`,
+                        minHeight: `${this.height}px`,
                         marginTop:0,
                         fontSize:'13px'
                   }"
