@@ -26,6 +26,14 @@ export default {
                   type: Number,
                   default: 150
             },
+            imgWidth: {
+                  type: Number,
+                  default: 150
+            },
+            imgHeight: {
+                  type: Number,
+                  default: 150
+            },
             label: {
                   type: String,
                   default: ""
@@ -178,8 +186,8 @@ export default {
       methods: {
             template: function () {
                   return `
-                  <a  class="dz-preview dz-file-preview" style="width:${this.width}px;height:${this.height}px;">
-                        <img data-dz-thumbnail style="width:${this.width}px;height:${this.height}px;object-fit: cover;"/>
+                  <a  class="dz-preview dz-file-preview" style="width:${this.imgWidth}px;height:${this.imgHeight}px;">
+                        <img data-dz-thumbnail style="width:${this.imgWidth}px;height:${this.imgHeight}px;object-fit: cover;"/>
                         <div class="dz-details">
                               <div class="dz-size">${this.label}</div>
                         </div>
