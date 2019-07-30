@@ -5078,10 +5078,10 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.swal = window.
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('vue-dropzone', {
     ref: "filesImage",
-    staticClass: "files-image flex justify_center align_center",
+    staticClass: "files-image flex flex_wrap justify_center align_center",
     style: ({
-      minWidth: ((this.width) + "px"),
-      minHeight: ((this.height) + "px"),
+      width: ((this.width) + "px"),
+      height: ((this.height) + "px"),
       marginTop: 0,
       fontSize: '13px'
     }),
