@@ -2,7 +2,7 @@
       <div>
             <vue-dropzone
                   ref="filesImage"
-                  class="files-image flex flex_wrap justify_center align_center"
+                  class="files-image"
                   :id="`${this.id}`"
                   :style="{
                         width: `${this.width}px`,

@@ -891,6 +891,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                   type: Number,
                   default: 150
             },
+            imgWidth: {
+                  type: Number,
+                  default: 150
+            },
+            imgHeight: {
+                  type: Number,
+                  default: 150
+            },
             label: {
                   type: String,
                   default: ""
@@ -1050,7 +1058,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       methods: {
             template: function template() {
-                  return "\n                  <a  class=\"dz-preview dz-file-preview\" style=\"width:" + this.width + "px;height:" + this.height + "px;\">\n                        <img data-dz-thumbnail style=\"width:" + this.width + "px;height:" + this.height + "px;object-fit: cover;\"/>\n                        <div class=\"dz-details\">\n                              <div class=\"dz-size\">" + this.label + "</div>\n                        </div>\n                        <div class=\"dz-progress\"><span class=\"dz-upload\" data-dz-uploadprogress></span></div>\n                        <div class=\"dz-success-mark\">\n                        <span>\n                              <i class=\"md-icon md-icon-font md-theme-default\">check_circle_outline</i>\n                        </span>\n                        </div>\n                        <div class=\"dz-error-mark\"><span>\u2718</span></div>\n                        <div class=\"dz-error-message\">\n                        <span>\n                              <i class=\"md-icon md-icon-font md-theme-default\">error</i>\n                        </span>\n                        </div>\n                  </a>\n                  ";
+                  return "\n                  <a  class=\"dz-preview dz-file-preview\" style=\"width:" + this.imgWidth + "px;height:" + this.imgHeight + "px;\">\n                        <img data-dz-thumbnail style=\"width:" + this.imgWidth + "px;height:" + this.imgHeight + "px;object-fit: cover;\"/>\n                        <div class=\"dz-details\">\n                              <div class=\"dz-size\">" + this.label + "</div>\n                        </div>\n                        <div class=\"dz-progress\"><span class=\"dz-upload\" data-dz-uploadprogress></span></div>\n                        <div class=\"dz-success-mark\">\n                        <span>\n                              <i class=\"md-icon md-icon-font md-theme-default\">check_circle_outline</i>\n                        </span>\n                        </div>\n                        <div class=\"dz-error-mark\"><span>\u2718</span></div>\n                        <div class=\"dz-error-message\">\n                        <span>\n                              <i class=\"md-icon md-icon-font md-theme-default\">error</i>\n                        </span>\n                        </div>\n                  </a>\n                  ";
             },
             thumbnail: function thumbnail(file, dataUrl) {
                   var _this4 = this;
@@ -5078,7 +5086,7 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.swal = window.
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('vue-dropzone', {
     ref: "filesImage",
-    staticClass: "files-image flex flex_wrap justify_center align_center",
+    staticClass: "files-image",
     style: ({
       width: ((this.width) + "px"),
       height: ((this.height) + "px"),
