@@ -65,7 +65,6 @@ export default {
                   default: false
             }
       },
-
       mounted() {
             if (Object.keys(this.value).length == 0) {
                   return;
@@ -100,14 +99,28 @@ export default {
                   };
                   this.$refs.filesImage.manuallyAddFile(remote_file, file.url);
             });
-      },
 
+            this.init = false;
+
+            this.$nextTick(() => {
+                  const img = document.querySelectorAll('.dz-preview .img')
+
+                  Object.values(img).map(item => {
+                        item.setAttribute('style',`width:${this.imgWidth}px;height:${this.imgHeight}px;object-fit:cover;`)
+                  })
+            })
+      },
       watch: {
             value: function () {
                   let files = this.$refs.filesImage.getAcceptedFiles();
                   if (files.length != 0) {
                         return;
                   }
+
+                  if (!this.init) {
+                        return;
+                  }
+
                   // 如果初次载入，则初始化数据
                   // 数据初始化
                   if (Array.isArray(this.value)) {
@@ -134,12 +147,13 @@ export default {
                         };
                         this.$refs.filesImage.manuallyAddFile(remote_file, file.url);
                   });
+                  this.init = false;
             }
       },
-
       data() {
             return {
                   id: Date.now() + "." + Math.floor(Math.random() * 100000),
+                  init: true,
                   dropzoneOptions: {
                         url: this.api,
                         maxFilesize: (this.maxFileSize / 1024).toFixed(2),
@@ -151,7 +165,7 @@ export default {
                         acceptedFiles: this.allow.join(","),
                         maxFiles: this.maxFiles,
                         previewTemplate: this.template(),
-                        thumbnailWidth: this.width,
+                        thumbnailWidth: this.imgWidth,
                         thumbnailHeight: this.thumbnailHeight,
                         dictDefaultMessage: "",
                         dictInvalidFileType: "文件类型不允许上传",
@@ -187,7 +201,7 @@ export default {
             template: function () {
                   return `
                   <a  class="dz-preview dz-file-preview" style="width:${this.imgWidth}px;height:${this.imgHeight}px;">
-                        <img data-dz-thumbnail style="width:${this.imgWidth}px;height:${this.imgHeight}px;object-fit: cover;"/>
+                        <img class="img" data-dz-thumbnail style="width:${this.imgWidth}px;height:${this.imgHeight}px;object-fit:cover;"/>
                         <div class="dz-details">
                               <div class="dz-size">${this.label}</div>
                         </div>
@@ -225,7 +239,33 @@ export default {
             },
             onFilesAdded: function () { },
             onMaxFilesExceeded: function () { },
-            onRemoved: function () { },
+            onRemoved: function (removedFile) {
+                  // 数据初始化
+                  let files = [];
+                  if (Array.isArray(this.value)) {
+                        if (this.value.length == 0) {
+                              files = [];
+                        } else {
+                              files = this.value;
+                        }
+                  } else {
+                        if (Object.keys(this.value).length === 0) {
+                              files = [];
+                        } else {
+                              files = [this.value];
+                        }
+                  }
+
+                  files = files.filter(file => file.url != removedFile.fileUrl);
+                  let newValue = {};
+                  if (this.maxFiles == 1) {
+                        newValue = files.length > 0 ? files[0] : {};
+                  } else {
+                        newValue = files;
+                  }
+
+                  this.$emit("updateValue", newValue);
+            },
             onError: function (file, response) {
                   let _message = "上传失败";
 
